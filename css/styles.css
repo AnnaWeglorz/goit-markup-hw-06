@@ -321,15 +321,15 @@ header .container {
   /* padding:8px; */
   /* margin-left: 90%; */
 }
-.modal-form {
-  /* margin-left: 40px;
-  margin-right: 40px; */
-  /* padding:40px; */
-}
+/* .modal-form {
+  margin-left: 40px;
+  margin-right: 40px; 
+  padding-top:20px;
+} */
 .form-title{
 font-weight: 700;
 font-size: 20px;
-line-height: 23px;
+line-height: 1.15px;
 text-align: center;
 letter-spacing: 0.03em;
 color: var(--brand-color);
@@ -337,7 +337,7 @@ margin-bottom: 12px;
 }
 .modal-label {
   display:block;
-  position: absolute;
+  /* position: absolute; */
   top:-20px;
   text-align: left;
   margin-bottom: 4px;
@@ -348,19 +348,20 @@ margin-bottom: 12px;
   color: var(--navigation-contacts-color);
 }
 .fieldset {
-  font-family: inherit;
+  /* font-family: inherit;
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.01em;
-  color: var(--navigation-contacts-color);
-  display:flex;
+  color: var(--navigation-contacts-color); */
+  /* display:flex; */
+  margin-bottom: 10px;
   position: relative;
-  align-items: center;
+  /* align-items: center;
   margin-bottom: 10px;
   width: 448px;
   height: 40px;
   border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px;
+  border-radius: 4px; */
 }
 .fieldset:has(input:focus) {
   border-color:var(--selection-color);
@@ -375,9 +376,12 @@ margin-bottom: 12px;
   height:15px;
   border-radius: 4%;
   position:absolute;
-
-  
 }
+.icon-legal:checked + .legal-text {
+  background-color: #757575;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csymbol id='icon-icon-check1' viewBox='0 0 34 32'%3e%3cpath d='M4.267 0h25.6c2.356 0 4.267 1.91 4.267 4.267v23.467c0 2.356-1.91 4.267-4.267 4.267h-25.6c-2.356 0-4.267-1.91-4.267-4.267v-23.467c0-2.356 1.91-4.267 4.267-4.267z'%3e%3c/path%3e%3cpath fill='%23fff' stroke='%23fff' stroke-width='0.4267' stroke-miterlimit='4' stroke-linecap='butt' stroke-linejoin='miter' d='M8.442 16.537l-0.147-0.14-2.205 2.088 7.767 7.41 16.318-15.567-2.19-2.089-14.128 13.465-5.416-5.167z'%3e%3c/path%3e%3c/symbol%3e");
+}
+
 .checkbox:checked {
   fill:var(--selection-color);
 }
@@ -390,17 +394,15 @@ margin-bottom: 12px;
   left:27px;
   
 }
-.input-checkbox {
-  opacity:0;
-
-}
-
 
 .icon-form {
   width: 18px;
   height:18px;
-  margin-left: 12px;
-  
+  /* margin-left: 12px; */
+  position:absolute;
+  left:12px;
+  top:50%;
+  /* transform: translateY(-50%); */
 }
 
 
@@ -409,18 +411,12 @@ margin-bottom: 12px;
 .input-mail {
   border:0;
   background-color: transparent;
-  padding-left: 12px;
+  padding-left: 42px;
   width:100%;
-}
-
-.input-name:focus,
-.input-tel:focus,
-.input-mail:focus {
-  outline: 0;
-}
-.fieldset-comment{
-  width: 448px;
-  height: 120px;
+  align-items: center;
+  /* margin-bottom: 10px; */
+  width: 100%;
+  height: 40px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   font-family: inherit;
@@ -428,9 +424,32 @@ margin-bottom: 12px;
   line-height: 14px;
   letter-spacing: 0.01em;
   color: var(--navigation-contacts-color);
+}
+
+.input-name:focus,
+.input-tel:focus,
+.input-mail:focus {
+  outline: 0;
+}
+.fieldset-comment:has(input:focus) {
+  border-color:var(--selection-color);
+}
+.fieldset-comment:has(input:focus) .icon-form {
+  fill:var(--selection-color);
+}
+.fieldset-comment{
+  /* width: 448px;
+  height: 120px; */
+  /* border: 1px solid rgba(33, 33, 33, 0.2); */
+  /* border-radius: 4px; */
+  /* font-family: inherit;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.01em;
+  color: var(--navigation-contacts-color);
   display:flex;
   position: relative;
-  align-items:flex-start;
+  align-items:flex-start; */
   margin-bottom: 20px;
 }
 .input-commment {
@@ -442,10 +461,14 @@ margin-bottom: 12px;
   line-height: 14px;
   letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
-  margin-left:10px;
-  margin-top:10px;
+  padding:15px 16px;
+  resize:none;
+  /* margin-left:10px; */
+  /* margin-top:10px; */
   width:100%;
-  height:100%;
+  height:120px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
 }
 .input-commment:focus {
   outline: 0;
@@ -463,7 +486,7 @@ margin-bottom: 12px;
   
 }
 .link-form:visited {
-  color:var(--selection-color);
+  color: rgba(33, 150, 243, 1);
 }
 .button-form {
     min-width: 200px;
