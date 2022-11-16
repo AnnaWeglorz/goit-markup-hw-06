@@ -329,7 +329,7 @@ header .container {
 .form-title{
 font-weight: 700;
 font-size: 20px;
-line-height: 1.15px;
+line-height: 1.15;
 text-align: center;
 letter-spacing: 0.03em;
 color: var(--brand-color);
@@ -338,10 +338,10 @@ margin-bottom: 12px;
 .modal-label {
   display:block;
   /* position: absolute; */
-  top:-20px;
+  /* top:-20px; */
   text-align: left;
   margin-bottom: 4px;
-  font-family: inherit;
+  /* font-family: inherit; */
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.01em;
@@ -363,11 +363,65 @@ margin-bottom: 12px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px; */
 }
-.fieldset:has(input:focus) {
+/* .fieldset:has(input:focus) {
   border-color:var(--selection-color);
 }
 .fieldset:has(input:focus) .icon-form {
   fill:var(--selection-color);
+} */
+.option {
+  display: block;
+  position: relative;
+}
+
+/* Check */
+
+.check {
+  padding-left: 15px;
+}
+
+.check__input {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+.check__box {
+  position: absolute;
+  top:3px;
+  left:0;
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
+  border-radius: 0.05em;
+  /* background-color: white;
+  background-repeat: no-repeat;
+  background-position: 50% 50%; */
+  box-shadow: 0 0 0 0.1em #4A90E2;
+}
+.check__input:checked + .check__box {
+  background-color: #4A90E2;
+  background-image: url(../icon\ check.svg);
+}
+
+/* Focused */
+
+.check__input:focus + .check__box {
+  box-shadow:
+    0 0 0 0.1em #4A90E2,
+    0 0 0 0.2em #7ED321;
+}
+
+/* Disabled */
+
+.check__input:disabled + .check__box {
+  box-shadow: 0 0 0 0.1em #9B9B9B;
+}
+
+.check__input:checked:disabled + .check__box {
+  background-color: #9B9B9B;
 }
 .checkbox {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -376,10 +430,6 @@ margin-bottom: 12px;
   height:15px;
   border-radius: 4%;
   position:absolute;
-}
-.icon-legal:checked + .legal-text {
-  background-color: #757575;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csymbol id='icon-icon-check1' viewBox='0 0 34 32'%3e%3cpath d='M4.267 0h25.6c2.356 0 4.267 1.91 4.267 4.267v23.467c0 2.356-1.91 4.267-4.267 4.267h-25.6c-2.356 0-4.267-1.91-4.267-4.267v-23.467c0-2.356 1.91-4.267 4.267-4.267z'%3e%3c/path%3e%3cpath fill='%23fff' stroke='%23fff' stroke-width='0.4267' stroke-miterlimit='4' stroke-linecap='butt' stroke-linejoin='miter' d='M8.442 16.537l-0.147-0.14-2.205 2.088 7.767 7.41 16.318-15.567-2.19-2.089-14.128 13.465-5.416-5.167z'%3e%3c/path%3e%3c/symbol%3e");
 }
 
 .checkbox:checked {
@@ -394,7 +444,10 @@ margin-bottom: 12px;
   left:27px;
   
 }
-
+.fieldset-checkbox {
+  display:flex;
+  justify-content: center;
+}
 .icon-form {
   width: 18px;
   height:18px;
@@ -403,8 +456,18 @@ margin-bottom: 12px;
   left:12px;
   top:50%;
   /* transform: translateY(-50%); */
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-
+.fieldset:focus-within .icon-form,
+.fieldset:focus-within .icon-form,
+.fieldset:focus-within .icon-form{
+  fill:var(--selection-color);
+}
+/* .icon-form:focus {
+  fill:var(--selection-color);
+} */
 
 .input-name,
 .input-tel,
@@ -423,20 +486,25 @@ margin-bottom: 12px;
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.01em;
+  outline:transparent;
   color: var(--navigation-contacts-color);
+   transition-property: border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .input-name:focus,
 .input-tel:focus,
 .input-mail:focus {
-  outline: 0;
-}
-.fieldset-comment:has(input:focus) {
+  /* outline: 0; */
   border-color:var(--selection-color);
 }
-.fieldset-comment:has(input:focus) .icon-form {
+/* .fieldset-comment:has(input:focus) {
+  border-color:var(--selection-color);
+} */
+/* .fieldset-comment:has(input:focus) .icon-form {
   fill:var(--selection-color);
-}
+} */
 .fieldset-comment{
   /* width: 448px;
   height: 120px; */
@@ -469,14 +537,19 @@ margin-bottom: 12px;
   height:120px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  outline: transparent;
+  transition-property: border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .input-commment:focus {
-  outline: 0;
+  /* outline: 0; */
+  border-color: var(--selection-color);
 }
-.input-commment::placeholder {
+/* .input-commment::placeholder {
   display: flex;
   align-items: flex-start;
-}
+} */
 .legal-text {
   font-family: inherit;
   line-height: 24px;

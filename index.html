@@ -75,8 +75,15 @@
                 <label for="comment" class="modal-label">Komentarz</label>
                 <textarea class="input-commment" placeholder="Wprowadź tekst" type="textarea" name="comment" id="comment"></textarea>
               </div>
-              <label for="legal">
-                <input class="modal-checkbox" type="checkbox" name="rodo"><div class="checkbox"></div><input type="checkbox" class="input-checkbox"><svg class="icon-legal" width="11" height="8"><use href="./images/icons.svg#icon-icon-check1"></use></svg><span class="legal-text">Oświadczam iż akceptuję <a href="#" class="link-form">Regulamin</a> i <a href="#" class="link-form">Politykę Prywatności</a>.</span>
+              <label for="legal" class="fieldset-checkbox">
+                <!-- <input class="modal-checkbox" type="checkbox" name="rodo">
+                <div class="checkbox"></div> -->
+                <!-- <input type="checkbox" class="input-checkbox"> -->
+                <!-- <svg class="icon-legal" width="11" height="8"><use href="./images/icons.svg#icon-icon-check1"></use></svg> -->
+                <label class="check option">
+                   <input class="check__input" type="checkbox">
+                   <span class="check__box"></span></label>
+                <span class="legal-text">Oświadczam iż akceptuję <a href="#" class="link-form">Regulamin</a> i <a href="#" class="link-form">Politykę Prywatności</a>.</span>
               </label>
               <button class="button-form" type="submit">Wyślij</button>
             </form>
